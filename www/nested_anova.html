@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <!--<link rel="stylesheet" media="screen and (min-width:601px)" href="style1.css">
+        <link rel="stylesheet" media="screen and (max-width:600px)" href="style2.css">-->
+        <link rel="stylesheet" href="nested_anova_style1.css">
+        <title>ANOVA</title>
+    </head>
+
+    <body>
+        <!--Tab Links-->
+        <div class="tab">
+            <!--<button class="tablinks" onclick="openTab(event, 'nested1')" id="defaultOpen">Nested ANOVA Model</button>
+            <button class="tablinks" onclick="openTab(event, 'nested2')">Build a Nested Model</button>-->
+            <button class="tablinks" id="defaultOpen">Nested ANOVA Model</button>
+            <button class="tablinks">Build a Nested Model</button>   
+        </div>
+
+        <!--Tab Content-->
+
+        <!--Nested ANOVA Model Tab-->
+        <div id="nested1" class="tabcontent">
+            
+            <!--Title-->
+            <h1 id="nested1title">Nested ANOVA Model:</h1>
+
+            <!--Equation/Descriptions-->
+            <div id="nested_eq">
+
+                <!--Y_ijt-->
+                <div id="n_yijt">
+                    <button class="nb grow" id="nb1">𝐘<sub>𝒊𝒋𝒕</sub></button>
+    
+                    <div class="desc" id="desc1">
+                        <div>|</div>
+                        <p>𝐘<sub>𝒊𝒋𝒕</sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
+                    </div>
+                </div>
+    
+                <!--=-->
+                <div class="symbol" id="equals">=</div>
+    
+                <!--u-->
+                <div id="n_mu">
+                    <button class="nb grow" id="nb2">𝛍</button>
+        
+                    <div class="desc" id="desc2">
+                        <div>|</div>
+                        <p>𝛍 is the grand mean, which is the total of all data values divided by the total sample size.</p>
+                    </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol" id="plus1">+</div>
+    
+                <!--a_i-->
+                <div id="n_ai">
+                    <button class="nb grow" id="nb3">𝛂<sub>𝒊</sub></button>
+        
+                    <div class="desc" id="desc3">
+                        <div>|</div>
+                        <p>𝛂<sub>𝒊</sub> is the main effect, which encodes the effect of the 𝑖-th level of Factor A on the mean response.</p>
+                    </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol" id="plus2">+</div>
+    
+                <!--B_j(i)-->
+                <div id="n_bji">
+                        <button class="nb grow" id="nb4">𝛃<sub>𝒋(𝒊)</sub></button>
+            
+                        <div class="desc" id="desc4">
+                            <div>|</div>
+                            <p>𝛃<sub>𝒋(𝒊)</sub> is the nested effect, which encodes the additional effect of the mean response on the joint combination of level 𝑖 of Factor A and level 𝑗 of Factor B. Each level of Factor B is "nested" within a single level of Factor A.</p>
+                        </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol" id="plus3">+</div>
+    
+                <!--e_ijt-->
+                <div id="n_eijt">
+                    <button class="nb grow" id="nb5">𝛆<sub>𝒊𝒋𝒕</sub></button>
+            
+                    <div class="desc" id="desc5">
+                        <div>|</div>
+                        <p>𝛆<sub>𝒊𝒋𝒕</sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
+                    </div>
+                </div>
+    
+                <!--,-->
+                <div class="symbol" id="comma">,</div>
+    
+                <!--e_ijt~N(0,sigma^2)-->
+                <div id="n_eijtN">
+                    <button class="nb grow" id="nb6">𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)</button>
+                
+                    <div class="desc" id="desc6">
+                        <div>|</div>
+                        <p>𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>) represents the ANOVA error assumptions:
+                            <br>1.) Errors are independent.
+                            <br>2.) Errors are normally distributed with a zero mean.
+                            <br>3.) Error variance is constant across treatments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--"Build a Nested Model" Button-->
+            <button class="regbtn grow" type="button" id="next1">Build a Nested Model</button>
+
+        </div>
+
+        <!--Build a Nested Model Tab-->        
+        <div id="nested2" class="tabcontent">
+
+            <!--Scenario-->
+            <div id="scenarioDiv">
+                <div id="scenarioTitle">Scenario:</div>
+                <div id="scenario"></div>
+            </div>
+
+            <!--"Build Model" Button-->
+            <div id="build1Div">
+                <button class="regbtn grow" id="build1">Build Model</button>
+            </div>
+
+            <!--Steps-->
+
+            <div id="steps">
+
+                <!--Step 1-->
+                <div id="step1">
+                    <h3>Step 1: Identify the main effect.</h3>
+                    <div id="choiceBlock1"></div>
+                    <div class="checkx" id="checkx1"></div>
+                    <button class="regbtn submitbtn" id="submit1">Submit</button>
+                    <div id="feedback1"></div>
+                </div>
+
+                <!--Step 2-->
+                <div id="step2">
+                    <h3>Step 2: Identify the nested effect.</h3>
+                    <div id="choiceBlock2"></div>
+                    <div class="checkx" id="checkx2"></div>
+                    <button class="regbtn submitbtn" id="submit2">Submit</button>
+                    <div id="feedback2"></div>
+                </div>
+
+                <!--Step 3-->
+                <div id="step3">
+                    <h3>Step 3: Identify the replicate.</h3>
+                    <div id="choiceBlock3"></div>
+                    <div class="checkx" id="checkx3"></div>
+                    <button class="regbtn submitbtn" id="submit3">Submit</button>
+                    <div id="feedback3"></div>
+                    <h4 id="s3subTitle">Identify the number of replicates.</h4>
+                    <input type="number" name="replicates" id="repNumInput" min="1">
+                    <button class="regbtn" id="checkreps">Check</button>
+                    <div id="checkx4"></div>
+                    <div id="feedbackRep3"></div>
+                </div>
+
+            </div>
+
+            <!--Instructions for Nested Diagram-->
+            <div id="nestedInstr">
+                <div id="challengeText">Challenge: </div>
+
+                <div>
+                    Using the three steps above, complete the <span class="boldText">Nested ANOVA Diagram</span>.
+                </div>
+                
+                <div>
+                    Identify the levels of the <span class="boldText">main effect</span>, the levels of the <span class="boldText">nested effect</span>, 
+                    and the number of <span class="boldText">replicates</span>, indexed by 𝑖, 𝑗, and 𝑡 respectively, from the box of choices below.
+                </div>
+
+                <div>
+                    Drag the correct choices into the diagram. Submit to check your answers.
+                </div>
+            </div>
+
+            <!--Dragable Elements Block-->
+            <div id="dragBlock"></div>
+
+            
+            <!--Nested ANOVA Diagram-->
+
+            <!--Title for Nested Diagram-->
+            <h2 id="nestedTitle">Nested ANOVA Diagram</h2>
+
+            <div id="nestedDiagram">
+                <!--<div id="ijtLabel">
+                        <div>𝒊:</div>
+                        <div>𝒋:</div>
+                        <div>𝒕:</div>
+                </div>
+
+                <div class="diagramPart">
+                    <div class="mainLevel">
+                        <div></div>
+                    </div>
+                    <div class="lines1">
+                        <div>&#x3c;</div>
+                    </div>
+                    <div class="nestedLevel">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="lines2">
+                        <div>&#x3c;</div>
+                        <div>&#x3c;</div>
+                    </div>
+                    <div class="repLevel">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>-->
+                
+            </div>
+
+            <!--Submit Button Div-->
+            <div id="submitDiv">
+                <button class="regbtn grow" id="submitDiagram" type="button">Submit</button>
+            </div>
+
+            <!--Feedback for the Diagram-->
+            <div id="diagramFeedback"></div>
+
+            <!--"Show Final Model" Button-->
+            <div id="finalBtnDiv">
+                <button id="finalBtn" class="regbtn grow" type="button">Show Final Model</button>
+            </div>
+    
+            <!--Final Model Div-->
+            <div id="finalModel">
+                <div>
+                    𝐘<sub>𝒊𝒋𝒕</sub> = 𝛍 + 𝛂<sub>𝒊</sub> + 𝛃<sub>𝒋(𝒊)</sub> + 𝛆<sub>𝒊𝒋𝒕</sub>, &nbsp&nbsp&nbsp 𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)
+                </div>
+                <div id="indexLabels"></div>
+            </div>
+
+            <!--Play Again Button Div-->
+            <div id="playAgainDiv">
+                <button id="playAgainBtn" class="regbtn grow">Play Again</button>
+            </div>
+            
+
+        </div>
+
+        
+
+
+
+        <script src="nested_anova.js"></script>
+    </body>
+</html>

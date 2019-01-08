@@ -1,0 +1,49 @@
+[
+    {
+        "id" : 1,
+        "scenario" : "A national firm has three training schools in three cities: Atlanta, Chicago, and San Francisco. Each school has two instructors who only teach at one school. Each instructor has three classes, and the learning achievement for each class is measured with a test.",
+        "mainEffect" : "School",
+        "nestedEffect" : "Instructor",
+        "replicate": "Class",
+        "mainLevels": ["Atlanta", "Chicago", "San Francisco"],
+        "nestedLevels": ["Instructor 1", "Instructor 2", "Instructor 3", "Instructor 4", "Instructor 5", "Instructor 6"],
+        "nestedOrdered": false,
+        "repNums" : ["3 Classes", "3 Classes", "3 Classes", "3 Classes", "3 Classes", "3 Classes"]
+    },
+
+    {
+        "id" : 2,
+        "scenario" : "An experiment is conducted to test how much time students from different majors spend time studying. Two students are randomly selected from all students majoring in Statistics. Two separate students are randomly selected from all students majoring in Humanities. Each student recorded how much time they spent studying on four different days.",
+        "mainEffect" : "Major",
+        "nestedEffect" : "Student",
+        "replicate": "Day",
+        "mainLevels": ["Statistics", "Humanities"],
+        "nestedLevels": ["Student 1", "Student 2", "Student 3", "Student 4"],
+        "nestedOrdered": false,
+        "repNums" : ["4 Days", "4 Days", "4 Days", "4 Days"]
+    },
+
+    {
+        "id" : 3,
+        "scenario" : "An engineer wants to study variability in the strength of glass cathode supports made on production machines in the manufacturing plant. There is one production machine in the plant, and each machine has 2 components called \"heads\" which produce the glass cathode supports. The engineer took 6 glass supports made from each head and tested their strength.",
+        "mainEffect" : "Production Machine",
+        "nestedEffect" : "Head",
+        "replicate": "Glass Support",
+        "mainLevels": ["Production Machine"],
+        "nestedLevels": ["Head 1", "Head 2"],
+        "nestedOrdered": false,
+        "repNums" : ["6 Glass Supports", "6 Glass Supports"]
+    },
+
+    {
+        "id" : 4,
+        "scenario" : "An analysis is conducted to determine if different species and types of wood influence the nitrogen content in trees. Trees are divided into two types of wood: hard wood (oak and maple species), and soft wood (pine and spruce species). A random selection of 5 trees of each species was chosen from all trees in State Game Lands, and the nitrogen content was measured.",
+        "mainEffect" : "Wood Type",
+        "nestedEffect" : "Tree Species",
+        "replicate": "Tree",
+        "mainLevels": ["Hard Wood", "Soft Wood"],
+        "nestedLevels": ["Oak", "Maple", "Pine", "Spruce"],
+        "nestedOrdered": true,
+        "repNums" : ["5 Trees", "5 Trees", "5 Trees", "5 Trees"]
+    }
+]

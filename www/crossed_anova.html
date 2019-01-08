@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <!--<link rel="stylesheet" media="screen and (min-width:601px)" href="style1.css">
+        <link rel="stylesheet" media="screen and (max-width:600px)" href="style2.css">-->
+        <link rel="stylesheet" href="crossed_anova_style1.css">
+        <title>ANOVA</title>
+
+    </head>
+
+    <body>
+        <!--Tab Links-->
+        <div class="tab_c">
+            <button class="tablinks_c" id="defaultOpen_c">Crossed ANOVA Model</button>
+            <button class="tablinks_c">Build a Crossed Model</button>   
+        </div>
+
+        <!--Tab Content-->
+
+        <!--Crossed ANOVA Model Tab-->
+        <div id="crossed1" class="tabcontent_c">
+            <!--Title-->
+            <h1 id="crossed1title">Crossed ANOVA Model:</h1>
+            
+            <!--Equation/Descriptions-->
+            <div id="crossed_eq">
+
+                <!--Y_ijt-->
+                <div id="c_yijt">
+                    <button class="cb grow" id="cb1">𝐘<sub>𝒊𝒋𝒕</sub></button>
+    
+                    <div class="desc_c" id="desc1_c">
+                        <div>|</div>
+                        <p>𝐘<sub>𝒊𝒋𝒕</sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
+                    </div>
+                </div>
+    
+                <!--=-->
+                <div class="symbol_c" id="equals_c">=</div>
+    
+                <!--u-->
+                <div id="c_mu">
+                    <button class="cb grow" id="cb2">𝛍</button>
+        
+                    <div class="desc_c" id="desc2_c">
+                        <div>|</div>
+                        <p>𝛍 is the grand mean, which is the total of all data values divided by the total sample size.</p>
+                    </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol_c" id="plus1_c">+</div>
+    
+                <!--a_i-->
+                <div id="c_ai">
+                    <button class="cb grow" id="cb3">𝛂<sub>𝒊</sub></button>
+        
+                    <div class="desc_c" id="desc3_c">
+                        <div>|</div>
+                        <p>𝛂<sub>𝒊</sub> is a main effect, which encodes the effect of the 𝑖-th level of Factor A on the mean response.</p>
+                    </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol_c" id="plus2_c">+</div>
+    
+                <!--B_j-->
+                <div id="c_bji">
+                        <button class="cb grow" id="cb4">𝛃<sub>𝒋</sub></button>
+            
+                        <div class="desc_c" id="desc4_c">
+                            <div>|</div>
+                            <p>𝛃<sub>𝒋</sub> is another main effect, which encodes the effect of the 𝑗-th level of Factor B on the mean response.</p>
+                        </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol_c" id="plus3_c">+</div>
+
+                <!--(aB)_ij-->
+                <div id="c_abij">
+                        <button class="cb grow" id="cb5">(𝛂𝛃)<sub>𝒊𝒋</sub></button>
+            
+                        <div class="desc_c" id="desc5_c">
+                            <div>|</div>
+                            <p>(𝛂𝛃)<sub>𝒊𝒋</sub> are the interaction effects, which encode the additional efect of the joint combination of level 𝑖 of Factor A and level 𝑗 of Factor B on the mean response.</p>
+                        </div>
+                </div>
+    
+                <!--+-->
+                <div class="symbol_c" id="plus4_c">+</div>
+    
+                <!--e_ijt-->
+                <div id="c_eijt">
+                    <button class="cb grow" id="cb6">𝛆<sub>𝒊𝒋𝒕</sub></button>
+            
+                    <div class="desc_c" id="desc6_c">
+                        <div>|</div>
+                        <p>𝛆<sub>𝒊𝒋𝒕</sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
+                    </div>
+                </div>
+    
+                <!--,-->
+                <div class="symbol_c" id="comma_c">,</div>
+    
+                <!--e_ijt~N(0,sigma^2)-->
+                <div id="c_eijtN">
+                    <button class="cb grow" id="cb7">𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)</button>
+                
+                    <div class="desc_c" id="desc7_c">
+                        <div>|</div>
+                        <p>𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>) represents the ANOVA error assumptions:
+                            <br>1.) Errors are independent.
+                            <br>2.) Errors are normally distributed with a zero mean.
+                            <br>3.) Error variance is constant across treatments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--"Build a Crossed Model" Button-->
+            <button class="regbtn grow" type="button" id="next1_c">Build a Crossed Model</button>
+        </div>
+
+        <!--Build a Crossed Model Tab-->        
+        <div id="crossed2" class="tabcontent_c">
+            
+            <!--Scenario-->
+            <div id="scenarioDiv_c">
+                <div id="scenarioTitle_c">Scenario:</div>
+                <div id="scenario_c"></div>
+            </div>
+    
+            <!--"Build Model" Button-->
+            <div id="buildDiv_c">
+                <button class="regbtn grow" id="build_c">Build Model</button>
+            </div>
+
+
+            <!--Steps-->
+            <div id="steps_c">
+                <!--Step 1-->
+                <div id="step1_c">
+                    <h3>Step 1: Identify the main effects.</h3>
+                    <div id="choiceBlock1_c"></div>
+                    <div class="checkx_c" id="checkx1_c">x</div>
+                    <button class="regbtn submitbtn" id="submit1_c">Submit</button>
+                    <div id="feedback1_c">Feedback 1</div>
+                </div>
+    
+                <!--Step 2-->
+                <div id="step2_c">
+                    <h3>Step 2: Consider the interactions.</h3>
+                    <h4 id="s2subTitle_c">Identify the number of interactions.</h4>
+                    <input type="number" name="interactions" id="interNumInput_c" min="1">
+                    <div class="checkx_c" id="checkx2_c">x</div>
+                    <button class="regbtn submitbtn" id="submit2_c">Submit</button>
+                    <div id="feedback2_c">Feedback 2</div>
+                </div>
+    
+                <!--Step 3-->
+                <div id="step3_c">
+                    <h3>Step 3: Identify the replicate.</h3>
+                    <div id="choiceBlock3_c"></div>
+                    <div class="checkx_c" id="checkx3_c">x</div>
+                    <button class="regbtn submitbtn" id="submit3_c">Submit</button>
+                    <div id="feedback3_c">Feedback 3</div>
+                    <h4 id="s3subTitle_c">Identify the number of replicates.</h4>
+                    <input type="number" name="replicates" id="repNumInput_c" min="1">
+                    <button class="regbtn" id="checkreps_c">Check</button>
+                    <div id="checkx4_c">x</div>
+                    <div id="feedbackRep3_c">Feedback sub 3</div>
+                </div>
+            </div>
+
+            <!--Instructions for Crossed Diagram-->
+            <div id="crossedInstr">
+                <div id="challengeText_c">Challenge: </div>
+
+                <div>
+                    Using the three steps above, complete the <span class="boldText">Crossed ANOVA Diagram</span>.
+                </div>
+                
+                <div>
+                    Identify the levels of each <span class="boldText">main effect</span>, indexed by 𝑖 and 𝑗, and the number of <span class="boldText">replicates</span>, indexed by 𝑡, from the box of choices below.
+                </div>
+
+                <div>
+                    Drag the correct choices into the diagram. Submit to check your answers.
+                </div>
+            </div>
+    
+            <!--Dragable Elements Block-->
+            <div id="dragBlock_c"></div>
+
+            <!--Title for Crossed Diagram-->
+            <h2 id="crossedTitle">Crossed ANOVA Diagram</h2>
+
+            <div id="crossedDiagram">
+                <!--<div id="ijtLabel_c">
+                    <div>𝒊:</div>
+                    <div>𝒋:</div>
+                    <div>𝒕:</div>
+                </div>
+                
+                <div class="diagramPart_c">
+                    <div class="main1Level_c">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="crossedLines_c">
+                        <svg id="crossedLines_svg"
+                            xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                            width="297mm"
+                            height="210mm"
+                            viewBox="0 0 297 210"
+                            version="1.1"
+                            id="svg8"
+                            inkscape:version="0.92.3 (2405546, 2018-03-11)"
+                            sodipodi:docname="crossedLines.svg">
+                           <defs
+                              id="defs2" />
+                           <sodipodi:namedview
+                              id="base"
+                              pagecolor="#ffffff"
+                              bordercolor="#666666"
+                              borderopacity="1.0"
+                              inkscape:pageopacity="0.0"
+                              inkscape:pageshadow="2"
+                              inkscape:zoom="0.47749719"
+                              inkscape:cx="396.85039"
+                              inkscape:cy="561.25984"
+                              inkscape:document-units="mm"
+                              inkscape:current-layer="g922"
+                              showgrid="false"
+                              showborder="true"
+                              inkscape:window-width="1366"
+                              inkscape:window-height="705"
+                              inkscape:window-x="-8"
+                              inkscape:window-y="-8"
+                              inkscape:window-maximized="1"
+                              inkscape:snap-nodes="false"
+                              inkscape:snap-global="false" />
+                           <metadata
+                              id="metadata5">
+                             <rdf:RDF>
+                               <cc:Work
+                                  rdf:about="">
+                                 <dc:format>image/svg+xml</dc:format>
+                                 <dc:type
+                                    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                 <dc:title></dc:title>
+                               </cc:Work>
+                             </rdf:RDF>
+                           </metadata>
+                           <g
+                              inkscape:label="Layer 1"
+                              inkscape:groupmode="layer"
+                              id="layer1"
+                              transform="translate(0,-87)">
+                             <g
+                                id="g922"
+                                transform="matrix(1.2766295,0,0,1,612.01259,-939.6138)">
+                               <g
+                                  transform="matrix(1.4268077,0,0,0.43952733,-168.62827,598.08191)"
+                                  id="g873"
+                                  style="stroke-width:1.77009904;stroke-miterlimit:4;stroke-dasharray:none" />
+                               <g
+                                  transform="matrix(-1.4268077,0,0,0.43952733,-555.86802,598.0885)"
+                                  id="g873-2" />
+                               <path
+                                  sodipodi:nodetypes="cc"
+                                  inkscape:connector-curvature="0"
+                                  id="left2"
+                                  d="m -437.29561,1027.7164 9.54882,51.5318"
+                                  style="fill:none;stroke:#000000;stroke-width:0.61953467;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                               <path
+                                  sodipodi:nodetypes="cc"
+                                  inkscape:connector-curvature="0"
+                                  id="left1"
+                                  d="m -437.72964,1027.7164 -35.15698,52.0859"
+                                  style="fill:none;stroke:#000000;stroke-width:0.70803958;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                               <path
+                                  sodipodi:nodetypes="cc"
+                                  inkscape:connector-curvature="0"
+                                  id="left5"
+                                  d="m -437.29561,1028.2705 141.06205,53.1941"
+                                  style="fill:none;stroke:#000000;stroke-width:1.0620594;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                               <path
+                                  sodipodi:nodetypes="cc"
+                                  inkscape:connector-curvature="0"
+                                  id="left3"
+                                  d="m -437.72964,1027.7164 54.25463,53.194"
+                                  style="fill:none;stroke:#000000;stroke-width:0.70803958;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -437.72964,1027.1623 93.31798,52.6398"
+                                  id="left4"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -287.11879,1027.1623 -185.3338,52.6399"
+                                  id="right1"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -287.55283,1027.1623 c -2.17018,1.6623 -140.62799,52.6399 -140.62799,52.6399"
+                                  id="right2"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -287.55283,1027.1623 -96.79025,53.7481"
+                                  id="right3"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -287.98686,1027.1623 -8.24671,53.7481"
+                                  id="right5"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -287.98686,1027.1623 31.68471,53.194"
+                                  id="right6"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -288.4209,1028.2705 c -3.03826,2.7705 -56.85884,51.5317 -56.85884,51.5317"
+                                  id="right4"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                               <path
+                                  style="fill:none;stroke:#000000;stroke-width:0.88504952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                  d="m -437.72964,1027.1623 181.42747,53.194"
+                                  id="left6"
+                                  inkscape:connector-curvature="0"
+                                  sodipodi:nodetypes="cc" />
+                             </g>
+                           </g>
+                        </svg>
+                    </div>
+                    <div class="main2Level_c">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="repLines_c">
+                        <div>☓</div>
+                        <div>☓</div>
+                        <div>☓</div>
+                        <div>☓</div>
+                        <div>☓</div>
+                        <div>☓</div>
+                    </div>
+                    <div class="repLevel_c">
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="repBox_c">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+
+
+            <!--Submit Button Div-->
+            <div id="submitDiv_c">
+                    <button class="regbtn grow" id="submitDiagram_c" type="button">Submit</button>
+            </div>
+
+            <!--Feedback for the Diagram-->
+            <div id="diagramFeedback_c"></div>
+
+            <!--"Show Final Model" Button-->
+            <div id="finalBtnDiv_c">
+                <button id="finalBtn_c" class="regbtn grow" type="button">Show Final Model</button>
+            </div>
+    
+            <!--Final Model Div-->
+            <div id="finalModel_c">
+                <div>
+                    𝐘<sub>𝒊𝒋𝒕</sub> = 𝛍 + 𝛂<sub>𝒊</sub> + 𝛃<sub>𝒋</sub> + (𝛂𝛃)<sub>𝒊𝒋</sub> + 𝛆<sub>𝒊𝒋𝒕</sub>, &nbsp&nbsp&nbsp 𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)
+                </div>
+                <div id="indexLabels_c"></div>
+            </div>
+
+            <!--Play Again Button Div-->
+            <div id="playAgainDiv_c">
+                <button id="playAgainBtn_c" class="regbtn grow">Play Again</button>
+            </div>
+
+        </div>
+
+
+
+        <script src="crossed_anova.js"></script>
+    </body>
+</html>

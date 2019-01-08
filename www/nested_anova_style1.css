@@ -1,0 +1,623 @@
+/***************************************************** COMMON STYLING FEATURES ***************************************************/
+/* These five below are to override some default R styling features */
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+.tab-content {
+    color: black;
+}
+.content{
+    height: 2300px;
+}
+/*h1, h2, h3 {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3 {
+    font-size: 120%;
+}
+h4 {
+    font-size: 110%;
+}*/
+
+/*** REGBTN CLASS STYLING ***/
+.regbtn{
+    font-family: 'Times New Roman', Times, serif;
+    border-style: outset;
+    border-radius: 5px;
+    color: white;
+    background-color: #BB8FCE;
+    border-color: #BB8FCE;
+    font-size: 2.8vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    height: 5.2vh;
+    cursor: pointer;
+}
+.regbtn:hover {
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+}
+.regbtn:active {
+    background-color: #A089A9;
+}
+
+/*** GROW CLASS STYLING ***/
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
+/*** SHOW & HIDE ***/
+.show{
+    visibility: visible;
+}
+.hide{
+   visibility: hidden;
+}
+/*** DISPLAY NONE ***/
+.none{
+    display: none;
+}
+/*** DISPLAY: INLINE_BLOCK ***/
+.dispIB {
+    display: inline-block;
+}
+
+/*** BUTTON DISABLED ***/
+.disabledbtn {
+    font-family: 'Times New Roman', Times, serif;
+    border-style: outset;
+    border-radius: 5px;
+    color: white;
+    background-color: #BB8FCE;
+    border-color: #BB8FCE;
+    font-size: 2.8vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    height: 5.2vh;
+
+    cursor: default;
+    opacity: 0.75;
+    box-shadow: none;
+}
+/*******************************************************************************************************************************/
+
+
+
+/*************************************************************** TABS **********************************************************/
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #AF8FBA;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    /*background-color: #f1f1f1;*/
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    /*float: left;*/
+    border: solid 1.5px #AF8FBA;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 110%;
+    font-weight: 600;
+    color: #2A0037;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #F3E2F9;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #E2D9E4;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+/*******************************************************************************************************************************/
+
+
+/************************************************* TAB 1: NESTED ANOVA MODEL ***************************************************/
+#nested1title {
+    font-size: 250%;
+    font-weight: bold;
+    text-align: center;
+    height: 20%;
+    margin-bottom: 8vh;
+}
+
+#nested_eq {
+    display: flex;
+    justify-content: center;
+}
+
+#nested_eq>* {
+    display: inline-block;
+}
+#nested_eq>*:not(.symbol) {
+    width: 14vw;
+}
+
+/* Style Character Buttons */
+.nb {
+    font-size: 2.8vw;
+    height: 10vh;
+    width: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+#nb6 {
+    font-size: 1.8vw;
+}
+.nb:hover {
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+    border-radius: 12px;
+    background-color: #F0DDF5;
+}
+.nb:active {
+    background-color: #DACCDC;
+}
+
+/* Style Symbols */
+.symbol {
+    width: 3vw;
+    font-size: 2.7vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5vh;
+}
+#comma {
+    text-align: left;
+}
+
+/* Descriptions */
+.desc {
+    width: 100%;
+    margin-top: 2.5vh;
+}
+
+/* Center all lines */
+.desc>:first-child {
+    text-align: center;
+    font-size: 400%;
+    font-weight: bold;
+    margin-bottom: -3vh;
+}
+/* Access each description */
+.desc>:nth-child(2) {
+    font-size: 2.6vh;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1vw;
+}
+
+/* Style Specific Lines/Descriptions */
+#desc1>:first-child {
+    color: #FFCCCC;
+}
+#desc1>:nth-child(2) {
+    background-color: #FFCCCC;
+    border-color: #FFCCCC;
+}
+#desc2>:first-child {
+    color: #DAF7A6;
+}
+#desc2>:nth-child(2) {
+    background-color: #DAF7A6;
+    border-color: #DAF7A6;
+}
+#desc3>:first-child {
+    color: #FBDF9F;
+}
+#desc3>:nth-child(2) {
+    background-color: #FBDF9F;
+    border-color: #FBDF9F;
+}
+#desc4>:first-child {
+    color: #CDDDFE;
+}
+#desc4>:nth-child(2) {
+    background-color: #CDDDFE;
+    border-color: #CDDDFE;
+}
+#desc5>:first-child {
+    color: #FBFBA9;
+}
+#desc5>:nth-child(2) {
+    background-color: #FBFBA9;
+    border-color: #FBFBA9;
+}
+#desc6>:first-child {
+    color: #E5E7E9;
+}
+#desc6>:nth-child(2) {
+    background-color: #E5E7E9;
+    border-color: #E5E7E9;
+}
+
+/* "Build a Nested Model" Button */
+#next1 {
+    right: 0;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    margin-right: 1.6vw;
+    position: absolute;
+}
+/*******************************************************************************************************************************/
+
+
+/************************************************ TAB 2: BUILD A NESTED MODEL **************************************************/
+/* Scenario */
+#scenarioDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    background-color: #F0DDF5;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.5vw;
+    border-color: #F0DDF5;
+    margin-top: 2vh;
+}
+#scenarioTitle {
+    text-align: center;
+    font-size: 130%;
+    font-weight: 600;
+    margin-bottom: 1%;
+}
+#scenario {
+    font-size: 110%;
+}
+
+/* Build Model Button div */
+#build1Div{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* Steps */
+/* Submit Button Formatting */
+.submitbtn {
+    margin-top: 5vh;
+    display: block;
+}
+
+#steps {
+    display: flex;
+    justify-content: center;
+}
+
+#steps>*{
+    display: inline-block;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.5vw;
+    margin: 2vw;
+}
+#step1 {
+    background-color: #D8EDFF;
+    border-color: #D8EDFF;
+}
+#step2 {
+    background-color: #FFFBD6;
+    border-color: #FFFBD6;
+}
+#step3{
+    background-color: #E1FFB7;
+    border-color: #E1FFB7;
+}
+
+#choiceBlock1, #choiceBlock2, #choiceBlock3 {
+    display: inline-block;
+    max-width: 70%;
+}
+
+#repNumInput {
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    font-size: 110%;
+}
+#checkreps {
+    font-size: 2.2vh;
+    padding-right: 0.7vw;
+    padding-left: 0.7vw;
+    height: 4.5vh;
+}
+#feedback1, #feedback2, #feedback3 {
+    margin-top: 7%;
+    margin-bottom: 5%;
+    justify-content: center;
+}
+#feedback1>:first-child, #feedback2>:first-child, #feedback3>:first-child, #feedbackRep3>:first-child {
+    font-weight: bold;
+    margin-bottom: 2.5%;
+}
+/* Special formatting for Step 3 Subpart */
+#checkx4 {
+    display: inline-block;
+    font-size: 200%;
+    margin-left: 6%;
+    vertical-align: middle;
+}
+#feedbackRep3 {
+    margin-bottom: 5%;
+}
+#s3subTitle {
+    margin-bottom: 5%;
+    margin-top: 12%;
+    font-size: 110%;
+}
+
+.checkx {
+    display: inline-block;
+    max-width: 30%;
+    font-size: 400%;
+    margin-left: 10%;
+}
+
+/* Format Instructions for Nested ANOVA Diagram */
+#nestedInstr {
+    width: 75vw; /* 75vw for R version, 80vw for HTML version */
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+    font-size: 120%;
+    padding: 2%;
+    border-style: double;
+    border-radius: 10px;
+    border-width: 7px;
+    background-color: #F7F5F9;
+    border-color: #923EB4;
+}
+#challengeText{
+    font-size: 150%;
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration-line: underline;
+}
+.boldText {
+    font-weight: bold;
+}
+#nestedInstr>:nth-child(2){
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+#nestedInstr>:nth-child(3){
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+#nestedInstr>:nth-child(4){
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+
+/* Drag Elements Block */
+#dragBlock {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7vh;
+    width: 70vw;
+    min-height: 15vh;
+    background-color: #F0DDF5;
+    border-color: #F0DDF5;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.2vw;
+}
+.dragEl {
+    cursor: pointer;
+    background-color: #FCFBFB;
+    border-style: outset;
+    border-radius: 5px;
+    border-width: 2.5px;
+    padding: 0.8%;
+    margin: 1%;
+    text-align: center;
+    display: inline-block;
+    font-size: 110%;
+}
+
+.fill {
+    /*height: 65%;
+    width: 80%;*/ /* HTML version */
+
+    height: 90%;
+    width: 90%; /* R version */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hovered {
+    /*box-shadow: 0 3px 18px 0 #DCDBDC, 0 15px 50px 0 #DCDBDC;*/
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+}
+
+/* Nested ANOVA Diagram */
+#nestedTitle {
+    text-align: center;
+    font-size: 5vh;
+    margin-bottom: 7vh;
+}
+
+/* i j t Label for Diagram */
+#ijtLabel{
+    display: inline-block;
+    font-size: 270%;
+    margin-top: -11vh;
+    width: 15vw;
+    margin-right: -1vw; /* for R version only */
+}
+#ijtLabel>*{
+    /*margin: 14vh;*/ /* HTML version */
+    margin: 12vh; /* R version */
+}
+#spaceDiv{
+    display: inline-block;
+    width: 15vw;
+}
+
+/* HTML version */
+#nestedDiagram {
+    display: flex;
+    justify-content: center;
+    max-height: 55vh;
+}
+
+.mainLevel>* {
+    background-color: #D8EDFF;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 10vh;
+    width: 11vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lines1>* {
+    transform: rotate(90deg);
+    font-size: 800%;
+    display: inline-block;
+    /*margin-top: -5vh;
+    margin-bottom: -7vh;*/ /* HTML version */
+    margin-top: -7vh;
+    margin-bottom: -9vh;  /* R version */
+}
+.nestedLevel>* {
+    background-color: #FFFBD6;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 10vh;
+    width: 8vw;
+    display: inline-block;
+    margin: 1.2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lines2>* {
+    transform: rotate(90deg);
+    font-size: 700%;
+    display: inline-block;
+    margin: 2.5vw;
+    /*margin-top: -7vh;
+    margin-bottom: -6vh;*/ /* HTML version */
+    margin-top: -8vh;
+    margin-bottom: -8vh;  /* R version */
+}
+.repLevel>* {
+    background-color: #E1FFB7;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 8vh;
+    width: 9vw;
+    display: inline-block;
+    margin: 1vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagramPart>* {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes blink { 
+    50% { border-color: black; } 
+}
+.incorrect { /*or other element you want*/
+    border-color: red;
+    animation: blink .3s step-end 16 alternate;
+}
+
+/* Submit Button Div */
+#submitDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+    margin-top: 5vh; /* R version */
+    /*margin-top: 8vh;*/ /* for HTML version only */
+}
+
+/* Feedback Div */
+#diagramFeedback {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+    width: 80vw;
+    text-align: center;
+    font-size: 120%;
+}
+#diagramFeedback>:first-child {
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+/* Show Final Model */
+#finalBtnDiv {
+    display: flex;
+    justify-content: center;
+}
+#finalModel {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    background-color: #EFEFEF;
+    border-color: #EFEFEF;
+    border-style: outset;
+    border-radius: 25px;
+    width: 60vw;
+    padding: 1.5vw;
+}
+#finalModel>:first-child {
+    font-size: 200%;
+    text-align: center;
+    margin-bottom: 1%;
+}
+#indexLabels>* {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 125%;
+    margin-left: 16%;
+    margin-bottom: 0.5%;
+}
+
+/* Play Again Button Div */
+#playAgainDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+}
+#playAgainDiv>:first-child {
+    /*background-color: #9683CB;
+    border-color: #9683CB;*/
+
+    background-color: #aba39b;
+    border-color: #aba39b;
+}

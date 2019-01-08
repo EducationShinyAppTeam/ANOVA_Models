@@ -1,0 +1,34 @@
+[
+    {
+        "id" : 1,
+        "scenario" : "Different cloths were given one of six different \"stains\" by placing either blue ink, raspberry jam, tomato sauce, coffee, fruit juice, or soy sauce on the cloth. Each cloth was then immersed in a solution of water and bleach, where the concentration of bleach was either 3 tsp/liter or 7 tsp/liter. Each combination of stain and concentration was applied to 2 cloths, and the cloths were immersed in the liquid until the stain was lifted.",
+        "mainEffect1" : "Stain",
+        "mainEffect2" : "Bleach Concentration",
+        "replicate": "Cloth",
+        "main1Levels": ["3 tsp/liter", "7 tsp/liter"],
+        "main2Levels": ["Blue Ink", "Raspberry Jam", "Tomato Sauce", "Coffee", "Fruit Juice", "Soy Sauce"],
+        "repNums" : ["2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths", "2 cloths"]
+    },
+
+    {
+        "id" : 2,
+        "scenario" : "An experiment was conducted to determine the survival time, measured in hours, of mice that were administered a poison and a treatment. There were two poisons, four treatments, and six mice assigned at random to each treatment combination.",
+        "mainEffect1" : "Poison",
+        "mainEffect2" : "Treatment",
+        "replicate": "Mouse",
+        "main1Levels": ["Poison 1", "Poison 2"],
+        "main2Levels": ["Treatment 1", "Treatment 2", "Treatment 3", "Treatment 4"],
+        "repNums" : ["6 Mice", "6 Mice", "6 Mice", "6 Mice", "6 Mice", "6 Mice", "6 Mice", "6 Mice"]
+    },
+
+    {
+        "id" : 3,
+        "scenario" : "In an attempt to study the effect of fertilizer type on different grasses, a farmer gave either liquid fertilizer or granular fertilizer to ryegrass and wheatgrass. Each combination was tested on four equally sized patches of grass, and the average height of each patch of grass was determined to measure grass health.",
+        "mainEffect1" : "Fertilizer",
+        "mainEffect2" : "Grass",
+        "replicate": "Grass Patch",
+        "main1Levels": ["Liquid Fertilizer", "Granular Fertilizer"],
+        "main2Levels": ["Ryegrass", "Wheatgrass"],
+        "repNums" : ["4 Grass Patches", "4 Grass Patches", "4 Grass Patches", "4 Grass Patches"]
+    }
+]

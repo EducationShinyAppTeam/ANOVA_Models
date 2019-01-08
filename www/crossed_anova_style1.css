@@ -1,0 +1,645 @@
+/***************************************************** COMMON STYLING FEATURES ***************************************************/
+/* These five below are to override some default R styling features */
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+.content{
+    height: 2300px;
+}
+.tab-content {
+    color: black;
+}
+/*h1, h2, h3, h4 {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3 {
+    font-size: 125%;
+}
+h4 {
+    font-size: 110%;
+}*/
+
+/*** REGBTN CLASS STYLING ***/
+.regbtn{
+    font-family: 'Times New Roman', Times, serif;
+    border-style: outset;
+    border-radius: 5px;
+    color: white;
+    background-color: #BB8FCE;
+    border-color: #BB8FCE;
+    font-size: 2.8vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    height: 5.2vh;
+    cursor: pointer;
+}
+.regbtn:hover {
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+}
+.regbtn:active {
+    background-color: #A089A9;
+}
+
+/*** GROW CLASS STYLING ***/
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
+/*** SHOW & HIDE ***/
+.show{
+    visibility: visible;
+}
+.hide{
+   visibility: hidden;
+}
+/*** DISPLAY NONE ***/
+.none{
+    display: none;
+}
+/*** DISPLAY: INLINE_BLOCK ***/
+.dispIB {
+    display: inline-block;
+}
+
+/*** BUTTON DISABLED ***/
+.disabledbtn {
+    font-family: 'Times New Roman', Times, serif;
+    border-style: outset;
+    border-radius: 5px;
+    color: white;
+    background-color: #BB8FCE;
+    border-color: #BB8FCE;
+    font-size: 2.8vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    height: 5.2vh;
+
+    cursor: default;
+    opacity: 0.75;
+    box-shadow: none;
+}
+/*******************************************************************************************************************************/
+
+
+
+/*************************************************************** TABS **********************************************************/
+/* Style the tab */
+.tab_c {
+    overflow: hidden;
+    border: 1px solid #AF8FBA;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab_c button {
+    background-color: inherit;
+    /*float: left;*/
+    border: solid 1.5px #AF8FBA;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 110%;
+    font-weight: 600;
+    color: #2A0037;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab_c button:hover {
+    background-color: #F3E2F9;
+}
+
+/* Create an active/current tablink class */
+.tab_c button.active {
+    background-color: #E2D9E4;
+}
+
+/* Style the tab content */
+.tabcontent_c {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+/*******************************************************************************************************************************/
+
+
+/************************************************* TAB 1: NESTED ANOVA MODEL ***************************************************/
+#crossed1title {
+    font-size: 250%;
+    font-weight: bold;
+    text-align: center;
+    height: 20%;
+    margin-bottom: 8vh;
+}
+
+#crossed_eq {
+    display: flex;
+    justify-content: center;
+}
+
+#crossed_eq>* {
+    display: inline-block;
+}
+#crossed_eq>*:not(.symbol_c) {
+    width: 14vw;
+}
+
+/* Style Character Buttons */
+.cb {
+    font-size: 2.6vw;
+    height: 10vh;
+    width: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+#cb7 {
+    font-size: 1.6vw;
+}
+.cb:hover {
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+    border-radius: 12px;
+    background-color: #F0DDF5;
+}
+.cb:active {
+    background-color: #DACCDC;
+}
+
+/* Style Symbols */
+.symbol_c {
+    width: 3vw;
+    font-size: 2.7vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5vh;
+}
+#comma_c {
+    text-align: left;
+}
+
+/* Descriptions */
+.desc_c {
+    width: 100%;
+    margin-top: 2.5vh;
+}
+
+/* Center all lines */
+.desc_c>:first-child {
+    text-align: center;
+    font-size: 400%;
+    font-weight: bold;
+    margin-bottom: -3vh;
+}
+/* Access each description */
+.desc_c>:nth-child(2) {
+    font-size: 2.6vh;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1vw;
+}
+
+/* Style Specific Lines/Descriptions */
+#desc1_c>:first-child {
+    color: #C8D2E8;
+}
+#desc1_c>:nth-child(2) {
+    background-color: #C8D2E8;
+    border-color: #C8D2E8;
+}
+#desc2_c>:first-child {
+    color: #EECCC7;
+}
+#desc2_c>:nth-child(2) {
+    background-color: #EECCC7;
+    border-color: #EECCC7;
+}
+#desc3_c>:first-child {
+    color: #DEDCDC;
+}
+#desc3_c>:nth-child(2) {
+    background-color: #DEDCDC;
+    border-color: #DEDCDC;
+}
+#desc4_c>:first-child {
+    color: #D4C1E1;
+}
+#desc4_c>:nth-child(2) {
+    background-color: #D4C1E1;
+    border-color: #D4C1E1;
+}
+#desc5_c>:first-child {
+    color: #EADDCF;
+}
+#desc5_c>:nth-child(2) {
+    background-color: #EADDCF;
+    border-color: #EADDCF;
+}
+#desc6_c>:first-child {
+    color: #D1EEC7;
+}
+#desc6_c>:nth-child(2) {
+    background-color: #D1EEC7;
+    border-color: #D1EEC7;
+}
+#desc7_c>:first-child {
+    color: #E4C5D5;
+}
+#desc7_c>:nth-child(2) {
+    background-color: #E4C5D5;
+    border-color: #E4C5D5;
+}
+
+/* "Build a Nested Model" Button */
+#next1_c {
+    right: 0;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    margin-right: 1.6vw;
+    position: absolute;
+}
+/*******************************************************************************************************************************/
+
+
+/************************************************ TAB 2: BUILD A CROSSED MODEL *************************************************/
+/* Scenario */
+#scenarioDiv_c {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    background-color: #F0DDF5;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.5vw;
+    border-color: #F0DDF5;
+    margin-top: 2vh;
+}
+#scenarioTitle_c {
+    text-align: center;
+    font-size: 130%;
+    font-weight: 600;
+    margin-bottom: 1%;
+}
+#scenario_c {
+    font-size: 110%;
+}
+
+/* Build Model Button div */
+#buildDiv_c {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* Steps */
+/* Submit Button Formatting */
+.submitbtn {
+    margin-top: 5vh;
+    display: block;
+}
+
+#steps_c {
+    display: flex;
+    justify-content: center;
+}
+
+#steps_c>*{
+    display: inline-block;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.5vw;
+    margin: 2vw;
+}
+#step1_c {
+    background-color: #C8D2E8;
+    border-color: #C8D2E8;
+}
+#step2_c {
+    background-color: #EECCC7;
+    border-color: #EECCC7;
+}
+#step3_c {
+    background-color: #D1EEC7;
+    border-color: #D1EEC7;
+}
+
+#choiceBlock1_c, #choiceBlock3_c {
+    display: inline-block;
+    max-width: 70%;
+}
+
+#interNumInput_c {
+    width: 60%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    font-size: 110%;
+}
+#repNumInput_c {
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    font-size: 110%;
+}
+#checkreps_c {
+    font-size: 2.2vh;
+    padding-right: 0.7vw;
+    padding-left: 0.7vw;
+    height: 4.5vh;
+}
+#feedback1_c, #feedback2_c, #feedback3_c {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+#feedback1_c>:first-child, #feedback2_c>:first-child, #feedback3_c>:first-child, #feedbackRep3_c>:first-child {
+    font-weight: bold;
+    margin-bottom: 2.5%;
+}
+/* Special formatting for Step 3 Subpart */
+#checkx4_c {
+    display: inline-block;
+    font-size: 200%;
+    margin-left: 6%;
+    vertical-align: middle;
+}
+#feedbackRep3_c {
+    margin-bottom: 5%;
+}
+#s2subTitle_c, #s3subTitle_c {
+    margin-bottom: 5%;
+    margin-top: 12%;
+    font-size: 110%;
+}
+
+.checkx_c {
+    display: inline-block;
+    max-width: 30%;
+    font-size: 400%;
+    margin-left: 10%;
+}
+
+/* Format Instructions for Crossed ANOVA Diagram */
+#crossedInstr {
+    width: 75vw; /* 75vw for R version, 80vw for HTML version */
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+    font-size: 120%;
+    padding: 2%;
+    border-style: double;
+    border-radius: 10px;
+    border-width: 7px;
+    background-color: #F7F5F9;
+    border-color: #923EB4;
+}
+#challengeText_c {
+    font-size: 150%;
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration-line: underline;
+}
+.boldText {
+    font-weight: bold;
+}
+#crossedInstr>:nth-child(2) {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+#crossedInstr>:nth-child(3) {
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+#crossedInstr>:nth-child(4) {
+    margin-bottom: 2vh;
+    margin-left: 3%;
+}
+
+/* Drag Elements Block */
+#dragBlock_c {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7vh;
+    width: 70vw;
+    min-height: 15vh;
+    background-color: #F0DDF5;
+    border-color: #F0DDF5;
+    border-style: outset;
+    border-radius: 25px;
+    padding: 1.2vw;
+}
+.dragEl_c {
+    cursor: pointer;
+    background-color: #FCFBFB;
+    border-style: outset;
+    border-radius: 5px;
+    border-width: 2.5px;
+    padding: 0.7%;
+    margin: 0.5%;
+    text-align: center;
+    display: inline-block;
+    font-size: 104%;
+}
+
+.fill {
+    /*height: 65%;
+    width: 80%;*/ /* HTML version */
+
+    height: 90%;
+    width: 90%; /* R version */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hovered {
+    /*box-shadow: 0 3px 18px 0 #DCDBDC, 0 15px 50px 0 #DCDBDC;*/
+    box-shadow: 0 12px 16px 0 #DCDBDC, 0 17px 50px 0 #DCDBDC;
+}
+
+/* Crossed ANOVA Diagram */
+#crossedTitle {
+    text-align: center;
+    font-size: 5vh;
+    margin-bottom: 5vh;
+}
+
+/* i j t Label for Diagram */
+#ijtLabel_c {
+    display: inline-block;
+    font-size: 270%;
+}
+#ijtLabel_c>:first-child {
+    margin-bottom: 28vh;
+}
+#ijtLabel_c>:nth-child(2) {
+    margin-bottom: 8vh;
+}
+
+/* FOR HTML VERSION */
+/*#crossedDiagram {
+    display: flex;
+    justify-content: center;
+}*/
+
+/* FOR R VERSION */
+#crossedDiagram {
+    display: flex;
+}
+#ijtLabel_c {
+    margin-right: auto;
+    margin-left: auto;
+    margin-right: -1vw;
+}
+#crossedTitle {
+    margin-left: 9vw;
+}
+
+.main1Level_c>* {
+    background-color: #C8D2E8;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 8vh;
+    width: 10vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#crossedLines_svg {
+    margin-top: 1vh;
+    margin-bottom: -72vh;
+    height: 100vh;
+    width: 80vw;
+}
+.main2Level_c>* {
+    background-color: #EECCC7;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 8vh;
+    width: 10vw;
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 4vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.repLines_c>* {
+    /*transform: rotate(90deg);*/
+    font-size: 450%;
+    font-weight: 500;
+    display: inline-block;
+    margin: 4.3vw;
+    margin-top: -6.5vh; /* -8vh for HTML, -6.5vh for R version */
+    margin-bottom: -5.5vh;
+}
+.repBox_c{
+    display: inline-block;
+    margin: 0.5vw;
+}
+.repBox_c>* {
+    display: inline-block;
+    background-color: #D1EEC7;
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 7vh;
+    width: 5vw;
+    margin: 0.1vw;
+    margin-top: 2vh;
+
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+}
+
+.diagramPart_c>* {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes blink { 
+    50% { border-color: black; } 
+}
+.incorrect { /*or other element you want*/
+    border-color: red;
+    animation: blink .3s step-end 16 alternate;
+}
+
+/* Submit Button Div */
+#submitDiv_c {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+/* Feedback Div */
+#diagramFeedback_c {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+    width: 80vw;
+    text-align: center;
+    font-size: 120%;
+}
+#diagramFeedback_c>:first-child {
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+/* Show Final Model */
+#finalBtnDiv_c {
+    display: flex;
+    justify-content: center;
+}
+#finalModel_c {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    background-color: #EFEFEF;
+    border-color: #EFEFEF;
+    border-style: outset;
+    border-radius: 25px;
+    width: 60vw;
+    padding: 1.5vw;
+}
+#finalModel_c>:first-child {
+    font-size: 200%;
+    text-align: center;
+    margin-bottom: 1%;
+}
+#indexLabels_c>* {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 125%;
+    margin-left: 16%;
+    margin-bottom: 0.5%;
+}
+
+/* Play Again Button Div */
+#playAgainDiv_c {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+}
+#playAgainDiv_c>:first-child {
+    /*background-color: #9683CB;
+    border-color: #9683CB;*/
+
+    background-color: #aba39b;
+    border-color: #aba39b;
+}
