@@ -10,7 +10,7 @@ shinyServer(function(input, output, session) {
   observeEvent(input$go, {
     updateTabItems(session, "tabs", "crossed")
   })
-  observeEvent(input$info1,{
+  observeEvent(input$info,{
     sendSweetAlert(
       session = session,
       title = "Instructions:",
@@ -19,15 +19,15 @@ shinyServer(function(input, output, session) {
       type = "info"
     )
   })
-  observeEvent(input$info2,{
-    sendSweetAlert(
-      session = session,
-      title = "Instructions:",
-      text = "•	Click on a term to view its interpretation.\n
-      •	Identify the model components requested to build the model.",
-      type = "info"
-    )
-  })
+  # observeEvent(input$info2,{
+  #   sendSweetAlert(
+  #     session = session,
+  #     title = "Instructions:",
+  #     text = "•	Click on a term to view its interpretation.\n
+  #     •	Identify the model components requested to build the model.",
+  #     type = "info"
+  #   )
+  # })
   
 })
 

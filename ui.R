@@ -8,10 +8,12 @@ shinyUI(fluidPage(
   
   dashboardPage(skin = "black",
   
-                      dashboardHeader(title = "ANOVA"),
+                      dashboardHeader(title = "ANOVA",
+                                      tags$li(class = "dropdown", tags$a(href='https://shinyapps.science.psu.edu/',icon("home"))),
+                                      tags$li(class = "dropdown", actionLink("info",icon("info",class="myClass")))
+                                      ),
 
-                      dashboardSidebar(
-                                       sidebarMenu(id = "tabs",
+                      dashboardSidebar(sidebarMenu(id = "tabs",
                                                    menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
                                                    menuItem("Crossed ANOVA", tabName = "crossed", icon = icon("gamepad")),
                                                    menuItem("Nested ANOVA", tabName = "nested", icon = icon("gamepad"))
@@ -28,9 +30,12 @@ shinyUI(fluidPage(
                                         font-weight: bold;
                                         font-size: 30px;
                                         color: white;}')),
+                        tags$style(".fa-home {color:#FFFFFF}"),
+                        tags$style(".fa-info {color:#FFFFFF}"),
                         #tags$style(type = "text/css", ".content-wrapper,.right-side {background-color: white;}"),
                         tags$head(
                           tags$link(rel = "stylesheet", type = "text/css", href = "Feature.css"),
+                          
                           tags$style(HTML('
                                                   .skin-black .main-header>.navbar {
                                                   background-color: #BB8FCE  ;
@@ -125,7 +130,7 @@ shinyUI(fluidPage(
                                                   h3(strong("Instructions:")),
                                                   h4("For both crossed and nested ANOVA model designs, observe the model equations, follow the steps given, and then use them to complete their respective diagrams."),
                                                   br(),
-                                                  div(style = "text-align: center",actionButton("go", "G O !", icon = icon("bolt"), class = "regbtn grow",
+                                                  div(style = "text-align: center",actionButton("go", "G O !", icon = icon("bolt"), class = "circle grow",
                                                                                                 style = "
                                                                                                 font-family: 'Times New Roman', Times, serif;
                                                                                                 border-style: outset;
@@ -141,32 +146,30 @@ shinyUI(fluidPage(
                                                                                                 "
                                                   )),
                                                   h3(strong("Acknowledgements:")),
-                                                  h4("This application was developed and programmed by Angela Ting.")
-                                                  
-                                                  
+                                                  h4("This application was developed and programmed by Angela Ting."),
+                                                  h4("This application was modified by Zhiruo Wang.")
                                   ))
                           ),
 
                           #Nested ANOVA Page
                           tabItem(tabName = "crossed",
-                                  div(style="display: inline-block;vertical-align:top;",
-                                      tags$a(href='https://shinyapps.science.psu.edu/',tags$img(src='homebut.PNG', width = 19))
-                                  ),
-                                  div(style="display: inline-block;vertical-align:top;",
-                                      circleButton("info1",icon = icon("info"), status = "myClass",size = "xs")
-                                  ),
+                                  # div(style="display: inline-block;vertical-align:top;",
+                                  #     tags$a(href='https://shinyapps.science.psu.edu/',tags$img(src='homebut.PNG', width = 19))
+                                  # ),
+                                  # div(style="display: inline-block;vertical-align:top;",
+                                  #     circleButton("info1",icon = icon("info"), status = "myClass",size = "xs")
+                                  # ),
                                   includeHTML("www/crossed_anova.html")
 
                           ),
 
                           tabItem(tabName = "nested",
-                                  
-                                  div(style="display: inline-block;vertical-align:top;",
-                                      tags$a(href='https://shinyapps.science.psu.edu/',tags$img(src='homebut.PNG', width = 19))
-                                  ),
-                                  div(style="display: inline-block;vertical-align:top;",
-                                      circleButton("info2",icon = icon("info"), status = "myClass",size = "xs")
-                                  ),
+                                  # div(style="display: inline-block;vertical-align:top;",
+                                  #     tags$a(href='https://shinyapps.science.psu.edu/',tags$img(src='homebut.PNG', width = 19))
+                                  # ),
+                                  # div(style="display: inline-block;vertical-align:top;",
+                                  #     circleButton("info2",icon = icon("info"), status = "myClass",size = "xs")
+                                  # ),
                                   includeHTML("www/nested_anova.html")
                           )
 
