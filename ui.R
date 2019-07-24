@@ -35,6 +35,7 @@ shinyUI(fluidPage(
                         #tags$style(type = "text/css", ".content-wrapper,.right-side {background-color: white;}"),
                         tags$head(
                           tags$link(rel = "stylesheet", type = "text/css", href = "Feature.css"),
+                          tags$style(HTML('#go{color:white;background-color: #BB8FCE}')),
                           
                           tags$style(HTML('
                                                   .skin-black .main-header>.navbar {
@@ -130,21 +131,8 @@ shinyUI(fluidPage(
                                                   h3(strong("Instructions:")),
                                                   h4("For both crossed and nested ANOVA model designs, observe the model equations, follow the steps given, and then use them to complete their respective diagrams."),
                                                   br(),
-                                                  div(style = "text-align: center",actionButton("go", "G O !", icon = icon("bolt"), class = "circle grow",
-                                                                                                style = "
-                                                                                                font-family: 'Times New Roman', Times, serif;
-                                                                                                border-style: outset;
-                                                                                                border-radius: 5px;
-                                                                                                color: white;
-                                                                                                background-color: #BB8FCE;
-                                                                                                border-color: #BB8FCE;
-                                                                                                font-size: 2.8vh;
-                                                                                                padding-right: 1vw;
-                                                                                                padding-left: 1vw;
-                                                                                                height: 5.2vh;
-                                                                                                cursor: pointer;
-                                                                                                "
-                                                  )),
+                                                  div(style = "text-align: center",
+                                                      actionButton("go", "G O !", icon = icon("bolt"), class = "circle grow")),
                                                   h3(strong("Acknowledgements:")),
                                                   h4("This application was developed and programmed by Angela Ting."),
                                                   h4("This application was modified by Zhiruo Wang.")

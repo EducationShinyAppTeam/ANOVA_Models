@@ -14,9 +14,10 @@ shinyServer(function(input, output, session) {
     sendSweetAlert(
       session = session,
       title = "Instructions:",
+      type = NULL,
+      closeOnClickOutside = TRUE,
       text = "•	Click on a term to view its interpretation.\n
-      •	Identify the model components requested to build the model.",
-      type = "info"
+      •	Identify the model components requested to build the model."
     )
   })
   # observeEvent(input$info2,{
