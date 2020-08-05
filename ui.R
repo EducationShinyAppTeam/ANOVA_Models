@@ -25,7 +25,7 @@ dashboardPage(skin = "black",
     width = 250,
     sidebarMenu(
       id = "tabs",
-      menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
+      menuItem("Overview", tabName = "overview", icon = icon("tachometer-alt")),
       menuItem("Crossed ANOVA", tabName = "crossed", icon = icon("wpexplorer")),
       menuItem("Nested ANOVA", tabName = "nested", icon = icon("wpexplorer")),
       menuItem("References", tabName = "References", icon = icon("leanpub"))
@@ -74,7 +74,7 @@ dashboardPage(skin = "black",
           br(),
           br(),
           br(),
-          div(class = "updated", "Last Update: 7/29/2020 by XW.")
+          div(class = "updated", "Last Update: 08/05/2020 by XW.")
         )
       ),
 
