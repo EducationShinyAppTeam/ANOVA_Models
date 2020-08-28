@@ -3,7 +3,7 @@ library(shinydashboard)
 library(boastUtils)
 
 # App Meta Data----------------------------------------------------------------
-APP_TITLE  <<- "[ANOVA Models]"
+APP_TITLE  <<- "ANOVA Models"
 APP_DESCP  <<- paste(
   "This is the app contains some ANOVA models that you can test yourself.
   This app demonstrates the differences between creating model designs for
