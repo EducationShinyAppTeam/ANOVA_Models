@@ -31,11 +31,11 @@
 
                 <!--Y_ijt-->
                 <div id="n_yijt">
-                    <button class="nb grow" id="nb1">𝐘<sub>𝒊𝒋𝒕</sub></button>
+                    <button class="nb grow" id="nb1"><em>Y</em><sub><em>ijk</em></sub></button>
     
                     <div class="desc" id="desc1">
                         <div>|</div>
-                        <p>𝐘<sub>𝒊𝒋𝒕</sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
+                        <p><em>Y</em><sub><em>ijk</em></sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
                     </div>
                 </div>
     
@@ -44,11 +44,11 @@
     
                 <!--u-->
                 <div id="n_mu">
-                    <button class="nb grow" id="nb2">𝛍</button>
+                    <button class="nb grow" id="nb2">&mu;</button>
         
                     <div class="desc" id="desc2">
                         <div>|</div>
-                        <p>𝛍 is the grand mean, which is the total of all data values divided by the total sample size.</p>
+                        <p>&mu; is the grand mean, which is the total of all data values divided by the total sample size.</p>
                     </div>
                 </div>
     
@@ -57,11 +57,11 @@
     
                 <!--a_i-->
                 <div id="n_ai">
-                    <button class="nb grow" id="nb3">𝛂<sub>𝒊</sub></button>
+                    <button class="nb grow" id="nb3">&alpha;<sub><em>i</em></sub></button>
         
                     <div class="desc" id="desc3">
                         <div>|</div>
-                        <p>𝛂<sub>𝒊</sub> is the main effect, which encodes the effect of the 𝑖-th level of Factor A on the mean response.</p>
+                        <p>&alpha;<sub><em>i</em></sub> is the main effect, which encodes the effect of the <em>i</em>-th level of Factor A on the mean response.</p>
                     </div>
                 </div>
     
@@ -70,11 +70,11 @@
     
                 <!--B_j(i)-->
                 <div id="n_bji">
-                        <button class="nb grow" id="nb4">𝛃<sub>𝒋(𝒊)</sub></button>
+                        <button class="nb grow" id="nb4">&beta;<sub><em>j</em>(<em>i</em>)</sub></button>
             
                         <div class="desc" id="desc4">
                             <div>|</div>
-                            <p>𝛃<sub>𝒋(𝒊)</sub> is the nested effect, which encodes the additional effect of the mean response on the joint combination of level 𝑖 of Factor A and level 𝑗 of Factor B. Each level of Factor B is "nested" within a single level of Factor A.</p>
+                            <p>&beta;<sub><em>j</em>(<em>i</em>)</sub> is the nested effect, which encodes the additional effect of the mean response on the joint combination of level <em>i</em> of Factor A and level <em>j</em> of Factor B. Each level of Factor B is "nested" within a single level of Factor A.</p>
                         </div>
                 </div>
     
@@ -83,11 +83,11 @@
     
                 <!--e_ijt-->
                 <div id="n_eijt">
-                    <button class="nb grow" id="nb5">𝛆<sub>𝒊𝒋𝒕</sub></button>
+                    <button class="nb grow" id="nb5">&epsilon;<sub><em>ijk</em></sub></button>
             
                     <div class="desc" id="desc5">
                         <div>|</div>
-                        <p>𝛆<sub>𝒊𝒋𝒕</sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
+                        <p>&epsilon;<sub><em>ijk</em></sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
                     </div>
                 </div>
     
@@ -96,14 +96,14 @@
     
                 <!--e_ijt~N(0,sigma^2)-->
                 <div id="n_eijtN">
-                    <button class="nb grow" id="nb6">𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)</button>
+                    <button class="nb grow" id="nb6">&epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0,&nbsp;&sigma;<sup>2</sup>)</button>
                 
                     <div class="desc" id="desc6">
                         <div>|</div>
-                        <p>𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>) represents the ANOVA error assumptions:
-                            <br>1.) Errors are independent.
-                            <br>2.) Errors are normally distributed with a zero mean.
-                            <br>3.) Error variance is constant across treatments.
+                        <p>&epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0,&nbsp;&sigma;<sup>2</sup>) represents two of the three basic ANOVA error assumptions: <br>
+                            1.) Errors are normally distributed with a zero mean. <br>
+                            2.) Error variance is constant across treatments. <br>
+                            The third assumption is that the errors are all independent.
                         </p>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                 
                 <div>
                     Identify the levels of the <span class="boldText">main effect</span>, the levels of the <span class="boldText">nested effect</span>, 
-                    and the number of <span class="boldText">replicates</span>, indexed by 𝑖, 𝑗, and 𝑡 respectively, from the box of choices below.
+                    and the number of <span class="boldText">replicates</span>, indexed by <em>i</em>, <em>j</em>, and <em>k</em> respectively, from the box of choices below.
                 </div>
 
                 <div>
@@ -239,7 +239,7 @@
             <!--Final Model Div-->
             <div id="finalModel">
                 <div>
-                    𝐘<sub>𝒊𝒋𝒕</sub> = 𝛍 + 𝛂<sub>𝒊</sub> + 𝛃<sub>𝒋(𝒊)</sub> + 𝛆<sub>𝒊𝒋𝒕</sub>, &nbsp&nbsp&nbsp 𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)
+                    <em>Y</em><sub><em>ijk</em></sub> = &mu; + &alpha;<sub><em>i</em></sub> + &beta;<sub><em>j</em>(<em>i</em>)</sub> + &epsilon;<sub><em>ijk</em></sub>, &nbsp&nbsp&nbsp &epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0,&nbsp;&sigma;<sup>2</sup>)
                 </div>
                 <div id="indexLabels"></div>
             </div>
