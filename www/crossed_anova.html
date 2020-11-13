@@ -3,8 +3,6 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <!--<link rel="stylesheet" media="screen and (min-width:601px)" href="style1.css">
-        <link rel="stylesheet" media="screen and (max-width:600px)" href="style2.css">-->
         <link rel="stylesheet" href="crossed_anova_style1.css">
         <title>ANOVA</title>
 
@@ -13,7 +11,7 @@
     <body>
         <!--Tab Links-->
         <div class="tab_c">
-            <button class="tablinks_c" id="defaultOpen_c">Crossed ANOVA Model</button>
+            <button class="tablinks_c" id="defaultOpen_c">Explore a Crossed ANOVA Model</button>
             <button class="tablinks_c">Build a Crossed Model</button>   
         </div>
 
@@ -29,11 +27,11 @@
 
                 <!--Y_ijt-->
                 <div id="c_yijt">
-                    <button class="cb grow" id="cb1">𝐘<sub>𝒊𝒋𝒕</sub></button>
+                    <button class="cb grow" id="cb1"><em>Y</em><sub><em>ijk</em></sub></button>
     
                     <div class="desc_c" id="desc1_c">
                         <div>|</div>
-                        <p>𝐘<sub>𝒊𝒋𝒕</sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
+                        <p>><em>Y</em><sub><em>ijk</em></sub> is the response variable. This variable varies in response to changes in the explanatory variables.</p>
                     </div>
                 </div>
     
@@ -42,11 +40,11 @@
     
                 <!--u-->
                 <div id="c_mu">
-                    <button class="cb grow" id="cb2">𝛍</button>
+                    <button class="cb grow" id="cb2">&mu;</button>
         
                     <div class="desc_c" id="desc2_c">
                         <div>|</div>
-                        <p>𝛍 is the grand mean, which is the total of all data values divided by the total sample size.</p>
+                        <p>&mu; is the grand mean, which is the total of all data values divided by the total sample size.</p>
                     </div>
                 </div>
     
@@ -55,11 +53,11 @@
     
                 <!--a_i-->
                 <div id="c_ai">
-                    <button class="cb grow" id="cb3">𝛂<sub>𝒊</sub></button>
+                    <button class="cb grow" id="cb3">&alpha;<sub><em>i</em></sub></button>
         
                     <div class="desc_c" id="desc3_c">
                         <div>|</div>
-                        <p>𝛂<sub>𝒊</sub> is a main effect, which encodes the effect of the 𝑖-th level of Factor A on the mean response.</p>
+                        <p>&alpha;<sub><em>i</em></sub> is a main effect, which encodes the effect of the <em>i</em>-th level of Factor A on the mean response.</p>
                     </div>
                 </div>
     
@@ -68,11 +66,11 @@
     
                 <!--B_j-->
                 <div id="c_bji">
-                        <button class="cb grow" id="cb4">𝛃<sub>𝒋</sub></button>
+                        <button class="cb grow" id="cb4">&beta;<sub><em>j</em></sub></button>
             
                         <div class="desc_c" id="desc4_c">
                             <div>|</div>
-                            <p>𝛃<sub>𝒋</sub> is another main effect, which encodes the effect of the 𝑗-th level of Factor B on the mean response.</p>
+                            <p>&beta;<sub><em>j</em></sub> is another main effect, which encodes the effect of the <em>j</em>-th level of Factor B on the mean response.</p>
                         </div>
                 </div>
     
@@ -81,11 +79,11 @@
 
                 <!--(aB)_ij-->
                 <div id="c_abij">
-                        <button class="cb grow" id="cb5">(𝛂𝛃)<sub>𝒊𝒋</sub></button>
+                        <button class="cb grow" id="cb5">(&alpha;&beta;)<sub><em>ij</em></sub></button>
             
                         <div class="desc_c" id="desc5_c">
                             <div>|</div>
-                            <p>(𝛂𝛃)<sub>𝒊𝒋</sub> are the interaction effects, which encode the additional efect of the joint combination of level 𝑖 of Factor A and level 𝑗 of Factor B on the mean response.</p>
+                            <p>(&alpha;&beta;)<sub><em>ij</em></sub> are the interaction effects, which encode the additional effect of the joint combination of level <em>i</em> of Factor A and level <em>j</em> of Factor B on the mean response.</p>
                         </div>
                 </div>
     
@@ -94,11 +92,11 @@
     
                 <!--e_ijt-->
                 <div id="c_eijt">
-                    <button class="cb grow" id="cb6">𝛆<sub>𝒊𝒋𝒕</sub></button>
+                    <button class="cb grow" id="cb6">&epsilon;<sub><em>ijk</em></sub></button>
             
                     <div class="desc_c" id="desc6_c">
                         <div>|</div>
-                        <p>𝛆<sub>𝒊𝒋𝒕</sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
+                        <p>&epsilon;<sub><em>ijk</em></sub> is the error term, which represents the amount by which an observed variate differs from the value predicted by the model.</p>
                     </div>
                 </div>
     
@@ -107,15 +105,14 @@
     
                 <!--e_ijt~N(0,sigma^2)-->
                 <div id="c_eijtN">
-                    <button class="cb grow" id="cb7">𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)</button>
+                    <button class="cb grow" id="cb7">&epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0,&nbsp;&sigma;<sup>2</sup>)</button>
                 
                     <div class="desc_c" id="desc7_c">
                         <div>|</div>
-                        <p>𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>) represents the ANOVA error assumptions:
-                            <br>1.) Errors are independent.
-                            <br>2.) Errors are normally distributed with a zero mean.
-                            <br>3.) Error variance is constant across treatments.
-                        </p>
+                        <p>&epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0,&nbsp;&sigma;<sup>2</sup>) represents two of the basic ANOVA error assumptions: <br>
+                          1) Errors are normally distributed with a zero mean. <br>
+                          2) Error variance is constant across treatments.<br>
+                          The additional error assumption is that they are all independent.</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +181,7 @@
                 </div>
                 
                 <div>
-                    Identify the levels of each <span class="boldText">main effect</span>, indexed by 𝑖 and 𝑗, and the number of <span class="boldText">replicates</span>, indexed by 𝑡, from the box of choices below.
+                    Identify the levels of each <span class="boldText">main effect</span>, indexed by <em>i</em> and <em>j</em>, and the number of <span class="boldText">replicates</span>, indexed by <em>k</em>, from the box of choices below.
                 </div>
 
                 <div>
@@ -414,7 +411,7 @@
             <!--Final Model Div-->
             <div id="finalModel_c">
                 <div>
-                    𝐘<sub>𝒊𝒋𝒕</sub> = 𝛍 + 𝛂<sub>𝒊</sub> + 𝛃<sub>𝒋</sub> + (𝛂𝛃)<sub>𝒊𝒋</sub> + 𝛆<sub>𝒊𝒋𝒕</sub>, &nbsp&nbsp&nbsp 𝛆<sub>𝒊𝒋𝒕</sub> ∼ 𝐍(𝟎, 𝛔<sup>𝟐</sup>)
+                    <em>Y</em><sub><em>ijk</em></sub> = &mu; + &alpha;<sub><em>i</em></sub> + &beta;<sub><em>j</em></sub> + (&alpha;&beta;)<sub><em>ij</em></sub> + &epsilon;<sub><em>ijk</em></sub>, &nbsp&nbsp&nbsp &epsilon;<sub><em>ijk</em></sub>&sim;<strong>N</strong>(0, &sigma;<sup>2</sup>)
                 </div>
                 <div id="indexLabels_c"></div>
             </div>
