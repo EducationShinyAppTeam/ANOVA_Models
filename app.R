@@ -27,14 +27,13 @@ ui <- list(
       tags$li(class = "dropdown", actionLink("info", icon("info"))),
       tags$li(
         class = "dropdown",
-        tags$a(target = "_blank", icon("comments"),
-               href = "https://pennstate.qualtrics.com/jfe/form/SV_7TLIkFtJEJ7fEPz?appName=ANOVA_Models"
-        )
+        boastUtils::surveyLink(name = "ANOVA_Models")
       ),
-      tags$li(class = "dropdown",
-              tags$a(href = "https://shinyapps.science.psu.edu/",
-                     icon("home")
-              )
+      tags$li(
+        class = "dropdown",
+        tags$a(href = 'https://shinyapps.science.psu.edu/',
+               icon("home")
+        )
       )
     ),
     ## Sidebar ----
@@ -49,7 +48,7 @@ ui <- list(
       ),
       tags$div(
         class = "sidebar-logo",
-        boastUtils::psu_eberly_logo("reversed")
+        boastUtils::sidebarFooter()
       )
     ),
     ## Body ----
@@ -82,20 +81,25 @@ ui <- list(
           br(),
           h2("Acknowledgements"),
           p("This application was developed and programmed by Angela Ting. This
-            application was modified by Zhiruo Wang and Xuefei Wang."),
+            application was modified by Zhiruo Wang and Xuefei Wang. This app was
+            updated by Shravani Samala"),
           br(),
           br(),
           br(),
-          div(class = "updated", "Last Update: 08/05/2020 by XW.")
+          div(class = "updated", "Last Update: 07/14/2021 by SJS.")
         ),
         ### Crossed ANOVA Page ----
         tabItem(
           tabName = "crossed",
+          h2("Crossed ANOVA Model"), 
+          br(), 
           includeHTML("www/crossed_anova.html")
         ),
         ### Nested ANOVA Page ----
         tabItem(
           tabName = "nested",
+          h2("Nested ANOVA Model"), 
+          br(), 
           includeHTML("www/nested_anova.html")
         ),
         ### References Page ----
@@ -125,7 +129,11 @@ ui <- list(
             "Perrier, V., Meyer, F., Granjon, D. (2020). shinyWidgets:
             Custom Inputs Widgets for Shiny, R Package. Available from
             https://CRAN.R-project.org/package=shinyWidgets"
-          )
+          ), 
+          br(),
+          br(),
+          br(),
+          boastUtils::copyrightInfo()
         )
       ) # end of TabItems()
     ) # end of DashboardBody()
