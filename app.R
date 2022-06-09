@@ -42,6 +42,7 @@ ui <- list(
       sidebarMenu(
         id = "pages",
         menuItem("Overview", tabName = "overview", icon = icon("tachometer-alt")),
+        menuItem("Prerequisites", tabName = "prereq", icon = icon("book")),
         menuItem("Crossed ANOVA", tabName = "crossed", icon = icon("wpexplorer")),
         menuItem("Nested ANOVA", tabName = "nested", icon = icon("wpexplorer")),
         menuItem("References", tabName = "References", icon = icon("leanpub"))
@@ -72,7 +73,7 @@ ui <- list(
           div(
             style = "text-align: center;",
             bsButton(
-              inputId = "go",
+              inputId = "start",
               label = "GO!",
               icon = icon("bolt"),
               size = "large"
@@ -82,11 +83,48 @@ ui <- list(
           h2("Acknowledgements"),
           p("This application was developed and programmed by Angela Ting. This
             application was modified by Zhiruo Wang and Xuefei Wang. This app was
-            updated by Shravani Samala"),
+            updated by Shravani Samala and Wanyi Su."),
           br(),
           br(),
           br(),
-          div(class = "updated", "Last Update: 07/14/2021 by SJS.")
+          div(class = "updated", "Last Update: 06/07/2022 by WS.")
+        ),
+        ### Prerequisite page
+        tabItem(
+          tabName = "prereq",
+          h1("Introduction to ANOVA"),
+          tags$ul(tags$li("The analysis of variance (ANOVA) is a statistical 
+                          method that divides a data set's observed aggregate 
+                          variability into two parts: systematic components and 
+                          random factors. Random factors have no statistical 
+                          impact on the supplied data set, whereas systematic 
+                          influences do. In a regression research, analysts 
+                          employ the ANOVA test to examine the impact of 
+                          independent factors on the dependent variable."),
+            tags$li("Main effect: The effect of an independent variable
+                          on a dependent variable."),
+            tags$li("Replication: The number of random independent replicates 
+                    used to generate the unmeasured variance that is used to 
+                    calibrate the significance of effects in an ANOVA model."),
+            tags$li("Nested effect: Two similar factors but not identical, and 
+                    one nested in another.")),
+          br(),
+          h2("Crossed ANOVA"),
+          tags$ul(tags$li("There are two main effects in crossed ANOVA model."),
+                  tags$li("There are interactions betwen two main effects.")
+                  ),
+          br(),
+          h2("Nested ANOVA"),
+          tags$ul(tags$li("There are only one main effect in nested ANOVA model."),
+                  tags$li("There are not interactions."),
+                  tags$li("There are nested effects in nested ANOVA model.")),
+          br(),
+          br(),
+          div(style = "text-align: center",bsButton(inputId = "go", 
+                                                    label = "Explore", 
+                                                    icon("bolt"), 
+                                                    size = "large", class = "circle grow")
+          )
         ),
         ### Crossed ANOVA Page ----
         tabItem(
@@ -129,7 +167,29 @@ ui <- list(
             "Perrier, V., Meyer, F., Granjon, D. (2020). shinyWidgets:
             Custom Inputs Widgets for Shiny, R Package. Available from
             https://CRAN.R-project.org/package=shinyWidgets"
-          ), 
+          ),
+          p(
+            class = "hangingindent",
+            "Replication. (2022). Southampton UK. Available from
+            https://www.southampton.ac.uk/~cpd/anovas/datasets/Replication.htm"
+          ),
+          p(
+            class = "hangingindent",
+            "What are factors, crossed factors, and nested factors? Minitab. (2022). 
+            Available from https://support.minitab.com/en-us/minitab/18/help-and-
+            how-to/modeling-statistics/anova/supporting-topics/anova-models/what
+            -are-crossed-and-nested-factors/ "
+          ),
+          p(
+            class = "hangingindent",
+            "Will. K., Toby, W., and Timothy, L. (2022). Analysis of Variance 
+            (ANOVA). Available from https://www.investopedia.com/terms/a/anova.asp"
+          ),
+          p(
+            class = "hangingindent",
+            "Wikimedia Foundation. (2022). Main effect. Wikipedia.
+            Available from https://en.wikipedia.org/wiki/Main_effect"
+          ),
           br(),
           br(),
           br(),
@@ -143,12 +203,21 @@ ui <- list(
 # Define the server ----
 server <- function(input, output, session) {
 
-  # move from Overview to Crossed ANOVA tab
+  # move from Overview to Prereq
   observeEvent(input$go, {
     updateTabItems(
       session = session,
       inputId = "pages",
       selected = "crossed"
+    )
+  })
+  
+  # move from Prereq to Crossed ANOVA
+  observeEvent(input$start, {
+    updateTabItems(
+      session = session,
+      inputId = "pages",
+      selected = "prereq"
     )
   })
 
