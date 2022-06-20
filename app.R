@@ -93,7 +93,6 @@ ui <- list(
                     by looking at how the total variability in the measurements 
                     is divided into the systematic variation caused by differences
                     between the groupings and the random variation within groups."),
-            br(),
             tags$li("Crossed design: a crossed design is used when every possible 
                     combination of the levels of different factors are applied to 
                     the experimental units. For example, if a drug is to be tested 
@@ -101,7 +100,6 @@ ui <- list(
                     in two diff doses (low and high) with five replicates then 
                     all of the 3 x 2 = 6 treatment combinations would be replicated 
                     5 times giving you 30 observations to study."),
-            br(),
             tags$li("Nested design: A nested design is used when each level of one 
                     factor can only be combined with one level of another factor. 
                     For example, if a new teaching method is to be tested by three 
@@ -110,10 +108,8 @@ ui <- list(
                     and a control assignment.  Then the teachers are nested within
                     the school (since a particular teacher would only work at one 
                     specific school)."),
-            br(),
             tags$li("Main Effect: A main effect is the average impact of a factor 
                     on the response across all conditions."),
-            br(),
             tags$li("Interaction: An interaction occurs when the impact of a factor 
                     depends on the level of another factor.")),
           br(),
