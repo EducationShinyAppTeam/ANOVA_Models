@@ -6,7 +6,8 @@ Authors@R: c(
     person(given = "Angela", family = "Ting", email = "", role = c("aut", "cre")),
     person(given = "Zhiruo", family = "Wang", email = "", role = c("ctb")),
     person(given = "Angela", family = "Ting", email = "", role = c("ctb")),
-    person(given = "Shravani", family = "Samala", email = "sjs7049@psu.edu", role = c("ctb"))
+    person(given = "Shravani", family = "Samala", email = "sjs7049@psu.edu", role = c("ctb"),
+    person(given = "Wanyi", family = "Su", email = "wbs5152@psu.edu", role = c("ctb"))
   )
 Chapter: ANOVA Models
 Description: This app is focused on the differences between crossed and nested ANOVA models.

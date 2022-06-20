@@ -5,16 +5,13 @@ library(shinyBS)
 library(boastUtils)
 library(shinyWidgets)
 
-# App Meta Data----------------------------------------------------------------
 APP_TITLE  <<- "ANOVA Models"
 APP_DESCP  <<- paste(
   "This is the app contains some ANOVA models that you can test yourself.
   This app demonstrates the differences between creating model designs for
   crossed and nested ANOVAs."
 )
-# End App Meta Data------------------------------------------------------------
 
-# Load data, define global constants and functions ----
 
 # Define the UI ----
 ui <- list(
@@ -59,12 +56,8 @@ ui <- list(
         tabItem(
           tabName = "overview",
           h1("ANOVA Models"),
-          p("When designing ANOVA models, a crossed design is used when every
-            possible combination of the levels of different factors are applied to
-            experimental units. A nested design is used when each level of one factor
-            can only be combined with one level of another factor. This app
-            demonstrates the differences between creating model designs for crossed
-            and nested ANOVAs."),
+          p("This app demonstrates the differences between creating model designs 
+            for crossed and nested ANOVAs."),
           br(),
           h2("Instructions"),
           p("For both crossed and nested ANOVA model designs, observe the model
@@ -83,47 +76,52 @@ ui <- list(
           h2("Acknowledgements"),
           p("This application was developed and programmed by Angela Ting. This
             application was modified by Zhiruo Wang and Xuefei Wang. This app was
-            updated by Shravani Samala and Wanyi Su."),
+            updated by Shravani Samala and Wanyi Su. Special thanks to Dennis, k Pearl."),
           br(),
           br(),
           br(),
-          div(class = "updated", "Last Update: 06/07/2022 by WS.")
+          div(class = "updated", "Last Update: 06/19/2022 by WS.")
         ),
-        ### Prerequisite page
+        ### Prerequisite page ----
         tabItem(
           tabName = "prereq",
-          h1("Introduction to ANOVA"),
-          tags$ul(tags$li("The analysis of variance (ANOVA) is a statistical 
-                          method that divides a data set's observed aggregate 
-                          variability into two parts: systematic components and 
-                          random factors. Random factors have no statistical 
-                          impact on the supplied data set, whereas systematic 
-                          influences do. In a regression research, analysts 
-                          employ the ANOVA test to examine the impact of 
-                          independent factors on the dependent variable."),
-            tags$li("Main effect: The effect of an independent variable
-                          on a dependent variable."),
-            tags$li("Replication: The number of random independent replicates 
-                    used to generate the unmeasured variance that is used to 
-                    calibrate the significance of effects in an ANOVA model."),
-            tags$li("Nested effect: Two similar factors but not identical, and 
-                    one nested in another.")),
-          br(),
-          h2("Crossed ANOVA"),
-          tags$ul(tags$li("There are two main effects in crossed ANOVA model."),
-                  tags$li("There are interactions betwen two main effects.")
-                  ),
-          br(),
-          h2("Nested ANOVA"),
-          tags$ul(tags$li("There are only one main effect in nested ANOVA model."),
-                  tags$li("There are not interactions."),
-                  tags$li("There are nested effects in nested ANOVA model.")),
-          br(),
+          h2("Introduction to ANOVA"),
+          tags$ul(
+            tags$li("ANOVA: refers to a family of statistical techniques that 
+                    assess potential differences in a quantitative response given 
+                    the level(s) of one or more categorical factors. This is done 
+                    by looking at how the total variability in the measurements 
+                    is divided into the systematic variation caused by differences
+                    between the groupings and the random variation within groups."),
+            br(),
+            tags$li("Crossed design: a crossed design is used when every possible 
+                    combination of the levels of different factors are applied to 
+                    the experimental units. For example, if a drug is to be tested 
+                    in cells at three different temperatures (low, medium, or high) 
+                    in two diff doses (low and high) with five replicates then 
+                    all of the 3 x 2 = 6 treatment combinations would be replicated 
+                    5 times giving you 30 observations to study."),
+            br(),
+            tags$li("Nested design: A nested design is used when each level of one 
+                    factor can only be combined with one level of another factor. 
+                    For example, if a new teaching method is to be tested by three 
+                    different teachers at each of five different schools when the 
+                    students in their classrooms are randomly assigned to a treatment
+                    and a control assignment.  Then the teachers are nested within
+                    the school (since a particular teacher would only work at one 
+                    specific school)."),
+            br(),
+            tags$li("Main Effect: A main effect is the average impact of a factor 
+                    on the response across all conditions."),
+            br(),
+            tags$li("Interaction: An interaction occurs when the impact of a factor 
+                    depends on the level of another factor.")),
           br(),
           div(style = "text-align: center",bsButton(inputId = "go", 
                                                     label = "Explore", 
                                                     icon("bolt"), 
-                                                    size = "large", class = "circle grow")
+                                                    size = "large", 
+                                                    class = "circle grow")
           )
         ),
         ### Crossed ANOVA Page ----
@@ -167,28 +165,6 @@ ui <- list(
             "Perrier, V., Meyer, F., Granjon, D. (2020). shinyWidgets:
             Custom Inputs Widgets for Shiny, R Package. Available from
             https://CRAN.R-project.org/package=shinyWidgets"
-          ),
-          p(
-            class = "hangingindent",
-            "Replication. (2022). Southampton UK. Available from
-            https://www.southampton.ac.uk/~cpd/anovas/datasets/Replication.htm"
-          ),
-          p(
-            class = "hangingindent",
-            "What are factors, crossed factors, and nested factors? Minitab. (2022). 
-            Available from https://support.minitab.com/en-us/minitab/18/help-and-
-            how-to/modeling-statistics/anova/supporting-topics/anova-models/what
-            -are-crossed-and-nested-factors/ "
-          ),
-          p(
-            class = "hangingindent",
-            "Will. K., Toby, W., and Timothy, L. (2022). Analysis of Variance 
-            (ANOVA). Available from https://www.investopedia.com/terms/a/anova.asp"
-          ),
-          p(
-            class = "hangingindent",
-            "Wikimedia Foundation. (2022). Main effect. Wikipedia.
-            Available from https://en.wikipedia.org/wiki/Main_effect"
           ),
           br(),
           br(),
