@@ -79,8 +79,12 @@ ui <- list(
             updated by Shravani Samala and Wanyi Su. Special thanks to Dennis, k Pearl."),
           br(),
           br(),
+          "Cite this app as:",
           br(),
-          div(class = "updated", "Last Update: 06/19/2022 by WS.")
+          citeApp(),
+          br(),
+          br(),
+          div(class = "updated", "Last Update: 07/13/2022 by WS.")
         ),
         ### Prerequisite page ----
         tabItem(
