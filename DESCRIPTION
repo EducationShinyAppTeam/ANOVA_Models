@@ -1,13 +1,14 @@
 Title: ANOVA Models
 ShortName: ANOVA Models
-Date: 2021-07-14
-Lifecycle: experimental
+Date: 2018-08-01
+Lifecycle: questioning
 Authors@R: c(
-    person(given = "Angela", family = "Ting", email = "", role = c("aut", "cre")),
-    person(given = "Zhiruo", family = "Wang", email = "", role = c("ctb")),
-    person(given = "Angela", family = "Ting", email = "", role = c("ctb")),
-    person(given = "Shravani", family = "Samala", email = "sjs7049@psu.edu", role = c("ctb")),
-    person(given = "Wanyi", family = "Su", email = "", role = c("ctb"))
+    person(given = "Angela", family = "Ting", role = c("aut", "cre")),
+    person(given = "Zhiruo", family = "Wang", role = c("ctb")),
+    person(given = "Angela", family = "Ting", role = c("ctb")),
+    person(given = "Shravani", family = "Samala", role = c("ctb")),
+    person(given = "Wanyi", family = "Su", role = c("ctb")),
+    person(given = "Dennis", family = "Pearl", role = c("aut"))
   )
 Chapter: ANOVA Models
 Description: This app is focused on the differences between crossed and nested ANOVA models.
@@ -19,5 +20,5 @@ DisplayMode: Normal
 URL: https://psu-eberly.shinyapps.io/ANOVA_Model
 BugReports: https://github.com/EducationShinyAppTeam/ANOVA_Model/issues
 License: CC-BY-NC-SA-4.0
-Tags: simulation
+Tags: example
 Type: Shiny

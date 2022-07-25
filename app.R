@@ -5,13 +5,6 @@ library(shinyBS)
 library(boastUtils)
 library(shinyWidgets)
 
-APP_TITLE  <<- "ANOVA Models"
-APP_DESCP  <<- paste(
-  "This is the app contains some ANOVA models that you can test yourself.
-  This app demonstrates the differences between creating model designs for
-  crossed and nested ANOVAs."
-)
-
 
 # Define the UI ----
 ui <- list(
@@ -91,20 +84,20 @@ ui <- list(
           tabName = "prereq",
           h2("Introduction to ANOVA"),
           tags$ul(
-            tags$li("ANOVA: refers to a family of statistical techniques that 
+            tags$li("ANOVA refers to a family of statistical techniques that 
                     assess potential differences in a quantitative response given 
                     the level(s) of one or more categorical factors. This is done 
                     by looking at how the total variability in the measurements 
                     is divided into the systematic variation caused by differences
                     between the groupings and the random variation within groups."),
-            tags$li("Crossed design: a crossed design is used when every possible 
+            tags$li("A", strong("crossed design"), "is used when every possible 
                     combination of the levels of different factors are applied to 
                     the experimental units. For example, if a drug is to be tested 
                     in cells at three different temperatures (low, medium, or high) 
                     in two diff doses (low and high) with five replicates then 
                     all of the 3 x 2 = 6 treatment combinations would be replicated 
                     5 times giving you 30 observations to study."),
-            tags$li("Nested design: A nested design is used when each level of one 
+            tags$li("A", strong("nested design"), "is used when each level of one 
                     factor can only be combined with one level of another factor. 
                     For example, if a new teaching method is to be tested by three 
                     different teachers at each of five different schools when the 
@@ -112,18 +105,24 @@ ui <- list(
                     and a control assignment.  Then the teachers are nested within
                     the school (since a particular teacher would only work at one 
                     specific school)."),
-            tags$li("Main Effect: A main effect is the average impact of a factor 
+            tags$li("A", strong("main effect"), "is the average impact of a factor 
                     on the response across all conditions."),
-            tags$li("Interaction: An interaction occurs when the impact of a factor 
-                    depends on the level of another factor.")),
+            tags$li("An", strong("interaction"), "occurs when the impact of a factor 
+                    depends on the level of another factor.")
+          ),
           br(),
-          div(style = "text-align: center",bsButton(inputId = "go", 
-                                                    label = "Explore", 
-                                                    icon("bolt"), 
-                                                    size = "large", 
-                                                    class = "circle grow")
+          div(
+            style = "text-align: center;",
+            bsButton(
+              inputId = "go", 
+              label = "Explore", 
+              icon("bolt"), 
+              size = "large"
+            )
           )
         ),
+        ### The explore pages are currently built using non-R methods including
+        ### HTML, JS, and JSON. 
         ### Crossed ANOVA Page ----
         tabItem(
           tabName = "crossed",
@@ -145,26 +144,34 @@ ui <- list(
           h2("References"),
           p(
             class = "hangingindent",
-            "Carey, R. (2019). boastUtils: BOAST Utilities, R Package.
-            Available from https://github.com/EducationShinyAppTeam/boastUtils"
+            "Bailey, E. (2022). shinyBS: Twitter bootstrap components for Shiny.
+            (v. 0.61.1). [R package]. Available from
+            https://CRAN.R-project.org/package=shinyBS"
           ),
           p(
             class = "hangingindent",
-            "Chang, W. and Borges Ribeio, B. (2018). shinydashboard: Create
-            dashboards with 'Shiny', R Package. Available from
+            "Carey, R. and Hatfield, N. (2022). boastUtils: BOAST utilities.
+            (v. 0.1.12.4). [R package]. Available from
+            https://github.com/EducationShinyAppTeam/boastUtils"
+          ),
+          p(
+            class = "hangingindent",
+            "Chang, W. and Borges Ribeio, B. (2021). shinydashboard: Create
+            dashboards with 'Shiny'. (v. 0.7.2). [R package]. Available from
             https://CRAN.R-project.org/package=shinydashboard"
           ),
           p(
             class = "hangingindent",
-            "Chang, W., Cheng, J., Allaire, J., Xie, Y., and McPherson, J.
-            (2019). shiny: Web application framework for R, R Package.
+            "Chang, W., Cheng, J., Allaire, J., Sievert, C., Schloerke, B.,
+            Xie, Y., Allen, J., McPherson, J., Dipert, A., and Borges, B. (2021).
+            shiny: Web application framework for R. (v. 1.7.1) [R package].
             Available from https://CRAN.R-project.org/package=shiny"
           ),
           p(
             class = "hangingindent",
-            "Perrier, V., Meyer, F., Granjon, D. (2020). shinyWidgets:
-            Custom Inputs Widgets for Shiny, R Package. Available from
-            https://CRAN.R-project.org/package=shinyWidgets"
+            "Perrier, V., Meyer, F., Granjon, D. (2022). shinyWidgets:
+            Custom inputs widgets for shiny. (v. 0.7.0). [R package]. Available
+            from https://CRAN.R-project.org/package=shinyWidgets"
           ),
           br(),
           br(),
@@ -180,32 +187,42 @@ ui <- list(
 server <- function(input, output, session) {
 
   # move from Overview to Prereq
-  observeEvent(input$go, {
-    updateTabItems(
-      session = session,
-      inputId = "pages",
-      selected = "crossed"
-    )
-  })
+  observeEvent(
+    eventExpr = input$go, 
+    handlerExpr = {
+      updateTabItems(
+        session = session,
+        inputId = "pages",
+        selected = "crossed"
+      )
+    }
+  )
   
   # move from Prereq to Crossed ANOVA
-  observeEvent(input$start, {
-    updateTabItems(
-      session = session,
-      inputId = "pages",
-      selected = "prereq"
-    )
-  })
+  observeEvent(
+    eventExpr = input$start, 
+    handlerExpr = {
+      updateTabItems(
+        session = session,
+        inputId = "pages",
+        selected = "prereq"
+      )
+    }
+  )
 
   # Information button
-  observeEvent(input$info, {
-    sendSweetAlert(
-      session = session,
-      title = "Instructions",
-      text = "First, click on a term to view its interpretation. Then, identify
+  observeEvent(
+    eventExpr = input$info, 
+    handlerExpr = {
+      sendSweetAlert(
+        session = session,
+        type = "info",
+        title = "Instructions",
+        text = "First, click on a term to view its interpretation. Then, identify
       the model components requested to build the model."
-    )
-  })
+      )
+    }
+  )
 }
 
 # Boast app call ----
